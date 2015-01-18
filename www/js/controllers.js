@@ -25,6 +25,24 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards'])
   $scope.settings = {
     enableFriends: true
   };
+
+  $scope.launchVideo = function() {
+    function captureSuccess(mediaFiles) {
+      var mediaFile = mediaFiles[0];
+      // Save video
+    }
+
+    function captureFailure() {
+      // Warn user about failed video capture
+    }
+
+    var options = {
+      limit: 1,
+      duration: 5
+    };
+
+    navigator.device.capture.captureVideo(captureSuccess, captureFailure, options);
+  };
 })
 
 .controller('CardsCtrl', function($scope, $ionicSwipeCardDelegate) {
