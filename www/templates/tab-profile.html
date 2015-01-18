@@ -3,9 +3,9 @@
     <ion-list>
       <ion-item>
         <div class="profile-name">
-          {{name}}
+          {{user.facebook.displayName}}
         </div>
-        <img src="{{profile_pic}}" alt="" class="profile-pic">
+        <img src="https://graph.facebook.com/{{user.facebook.id}}/picture?type=normal" alt="" class="profile-pic">
       </ion-item>
       <ion-item href="#/video">
         Add/Modify Video
