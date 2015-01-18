@@ -1,7 +1,7 @@
 {
   "name": "Yinder",
   "version": "1.0.0",
-  "description": "Yinder: An Ionic project",
+  "description": "Tinder for activities",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^0.7.1",

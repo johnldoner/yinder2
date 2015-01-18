@@ -1,1 +1,2 @@
-# yinder2
+# Yinder
+Tinder for activities.
