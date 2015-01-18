@@ -182,5 +182,10 @@
         <string>{768, 1024}</string>
       </dict>
     </array>
+    <key>ExternalHosts</key>
+      <array>
+        <string>*.firebaseio.com</string>
+        <string>auth.firebase.com</string>
+      </array>
   </dict>
 </plist>

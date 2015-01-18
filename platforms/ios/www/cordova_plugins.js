@@ -48,12 +48,28 @@ module.exports = [
         "clobbers": [
             "navigator.device.capture"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
+        "id": "org.apache.cordova.inappbrowser.inappbrowser",
+        "clobbers": [
+            "window.open"
+        ]
+    },
+    {
+        "file": "plugins/com.bez4pieci.cookies/www/cookies.js",
+        "id": "com.bez4pieci.cookies.cookies",
+        "clobbers": [
+            "cookies"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.media-capture": "0.3.5"
+    "org.apache.cordova.media-capture": "0.3.5",
+    "org.apache.cordova.inappbrowser": "0.5.4",
+    "com.bez4pieci.cookies": "0.0.1"
 }
 // BOTTOM OF METADATA
 });

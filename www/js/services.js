@@ -101,6 +101,11 @@ angular.module('starter.services', [])
   }
 })
 
+.factory("Categories", ["$firebase", "Ref", function($firebase, Ref) {
+  var childRef = Ref.child('Categories');
+  return $firebase(childRef).$asArray();
+}])
+
 .factory("Auth", ["$firebaseAuth", "Ref", function($firebaseAuth, Ref) {
   return $firebaseAuth(Ref);
 }]);
