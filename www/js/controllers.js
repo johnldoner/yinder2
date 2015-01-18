@@ -50,6 +50,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards'])
   };
 })
 
+.controller('EventCtrl', function($scope) {
+  $scope.settings = {
+    
+  };
+})
+
 .controller('CardsCtrl', function($scope, $ionicSwipeCardDelegate) {
   var cardTypes = [{
     title: 'Swipe down to clear the card',
