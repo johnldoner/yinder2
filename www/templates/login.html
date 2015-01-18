@@ -2,7 +2,17 @@
   <ion-content class="padding">
     <br><br>
     <div class="list list-inset">
+
+      <button class="button button-block button-positive" ng-click="FacebookLogin()"><i class="icon ion-social-facebook"></i> Login with Facebook</button>
+      <!--
       <label class="item item-input">
+        <input type="text" class="nativedatepicker" placeholder="datepicker">
+      </label>
+      -->
+
+ <p>----------OR-----------</p>
+ <form>
+            <label class="item item-input">
         <input type="email" placeholder="Email">
       </label>
       <label class="item item-input">
@@ -10,12 +20,7 @@
       </label>
 
       <button class="button button-block button-assertive" ng-click=""><i class="icon ion-social-hackernews-outline"></i> Register</button>
-      <button class="button button-block button-positive" ng-click="FacebookLogin()"><i class="icon ion-social-facebook"></i> Login with Facebook</button>
-      <!--
-      <label class="item item-input">
-        <input type="text" class="nativedatepicker" placeholder="datepicker">
-      </label>
-      -->
+   </form>  
     </div>
   </ion-content>
 </ion-view>
