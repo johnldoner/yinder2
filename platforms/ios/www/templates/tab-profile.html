@@ -1,0 +1,24 @@
+<ion-view view-title="Profile">
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <div class="profile-name">
+          {{name}}
+        </div>
+        <img src="{{profile_pic}}" alt="" class="profile-pic">
+      </ion-item>
+      <ion-item href="#/video">
+        Add/Modify Video
+      </ion-item>
+      <ion-item class="item-toggle">
+        Enable Friends
+        <label class="toggle">
+          <input type="checkbox" ng-model="settings.enableFriends">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

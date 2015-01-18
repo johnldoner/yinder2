@@ -1,0 +1,12 @@
+2015-01-17 20:35:30.492 Yinder[2581:35157] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Chris/Library/Developer/CoreSimulator/Devices/8CC26F18-35D9-4D4B-AD3E-4DA04CE06652/data/Containers/Data/Application/50CB1535-4256-45E5-9D2F-23BBA629FE71/Library/Cookies/Cookies.binarycookies
+2015-01-17 20:35:30.726 Yinder[2581:35157] Apache Cordova native platform version 3.7.0 is starting.
+2015-01-17 20:35:30.726 Yinder[2581:35157] Multi-tasking -> Device: YES, App: YES
+2015-01-17 20:35:30.739 Yinder[2581:35157] Unlimited access to network resources
+2015-01-17 20:35:32.055 Yinder[2581:35157] Resetting plugins due to page load.
+2015-01-17 20:35:32.549 Yinder[2581:35157] Finished load of: file:///Users/Chris/Library/Developer/CoreSimulator/Devices/8CC26F18-35D9-4D4B-AD3E-4DA04CE06652/data/Containers/Bundle/Application/BEC2AE9F-D155-4676-9C44-CF91CBA457C0/Yinder.app/www/index.html#/tab/dash
+2015-01-17 20:46:21.011 Yinder[3426:42934] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Chris/Library/Developer/CoreSimulator/Devices/8CC26F18-35D9-4D4B-AD3E-4DA04CE06652/data/Containers/Data/Application/4F93AE73-D0E8-4BAE-B89E-4BB973A6188A/Library/Cookies/Cookies.binarycookies
+2015-01-17 20:46:21.102 Yinder[3426:42934] Apache Cordova native platform version 3.7.0 is starting.
+2015-01-17 20:46:21.103 Yinder[3426:42934] Multi-tasking -> Device: YES, App: YES
+2015-01-17 20:46:21.104 Yinder[3426:42934] Unlimited access to network resources
+2015-01-17 20:46:21.360 Yinder[3426:42934] Resetting plugins due to page load.
+2015-01-17 20:46:21.520 Yinder[3426:42934] Finished load of: file:///Users/Chris/Library/Developer/CoreSimulator/Devices/8CC26F18-35D9-4D4B-AD3E-4DA04CE06652/data/Containers/Bundle/Application/4FB5D688-4989-4982-B258-9D32C88A4789/Yinder.app/www/index.html#/tab/dash

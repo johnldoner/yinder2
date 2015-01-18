@@ -1,0 +1,24 @@
+dependencies: \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVCommandQueue.m \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDV.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVAvailability.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVAvailabilityDeprecated.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVPlugin.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVPluginResult.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVCommandDelegate.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVViewController.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVCommandQueue.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVWhitelist.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVScreenOrientationDelegate.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVURLProtocol.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVDebug.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVLocalStorage.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVTimer.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/NSData+Base64.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVJSON.h \
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/yinder2/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.h
