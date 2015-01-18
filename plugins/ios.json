@@ -1,7 +1,19 @@
 {
     "prepare_queue": {
-        "installed": [],
-        "uninstalled": []
+        "installed": [
+            {
+                "plugin": "org.apache.cordova.file",
+                "vars": {},
+                "topLevel": false
+            }
+        ],
+        "uninstalled": [
+            {
+                "plugin": "org.apache.cordova.media-capture",
+                "id": "org.apache.cordova.media-capture",
+                "topLevel": true
+            }
+        ]
     },
     "config_munge": {
         "files": {}
