@@ -1,5 +1,7 @@
 angular.module('starter.services', [])
 
+.service("Ref", ["FBURL", Firebase])
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
@@ -94,7 +96,8 @@ angular.module('starter.services', [])
       return friends[friendId];
     }
   }
-});
+})
 
-
-
+.factory("Auth", ["$firebaseAuth", "Ref", function($firebaseAuth, Ref) {
+  return $firebaseAuth(Ref);
+}]);

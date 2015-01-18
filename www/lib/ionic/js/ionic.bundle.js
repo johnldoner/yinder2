@@ -13502,8 +13502,8 @@ function $CacheFactoryProvider() {
  * Adding via the $templateCache service:
  *
  * ```js
- * var myApp = angular.module('myApp', []);
- * myApp.run(function($templateCache) {
+ * var Yinder = angular.module('Yinder', []);
+ * Yinder.run(function($templateCache) {
  *   $templateCache.put('templateId.html', 'This is the content of the template');
  * });
  * ```
@@ -22742,15 +22742,15 @@ function adjustMatchers(matchers) {
  *
  * **Example**:  Consider the following case. <a name="example"></a>
  *
- * - your app is hosted at url `http://myapp.example.com/`
+ * - your app is hosted at url `http://Yinder.example.com/`
  * - but some of your templates are hosted on other domains you control such as
  *   `http://srv01.assets.example.com/`,  `http://srv02.assets.example.com/`, etc.
- * - and you have an open redirect at `http://myapp.example.com/clickThru?...`.
+ * - and you have an open redirect at `http://Yinder.example.com/clickThru?...`.
  *
  * Here is what a secure configuration for this scenario might look like:
  *
  * ```
- *  angular.module('myApp', []).config(function($sceDelegateProvider) {
+ *  angular.module('Yinder', []).config(function($sceDelegateProvider) {
  *    $sceDelegateProvider.resourceUrlWhitelist([
  *      // Allow same origin resource loads.
  *      'self',
@@ -22760,7 +22760,7 @@ function adjustMatchers(matchers) {
  *
  *    // The blacklist overrides the whitelist so the open redirect here is blocked.
  *    $sceDelegateProvider.resourceUrlBlacklist([
- *      'http://myapp.example.com/clickThru**'
+ *      'http://Yinder.example.com/clickThru**'
  *    ]);
  *  });
  * ```
@@ -23286,7 +23286,7 @@ function $SceDelegateProvider() {
  * That said, here's how you can completely disable SCE:
  *
  * ```
- * angular.module('myAppWithSceDisabledmyApp', []).config(function($sceProvider) {
+ * angular.module('YinderWithSceDisabledYinder', []).config(function($sceProvider) {
  *   // Completely disable SCE.  For demonstration purposes only!
  *   // Do not use in new projects.
  *   $sceProvider.enabled(false);
@@ -36950,14 +36950,14 @@ angular.module('ui.router.state', ['ui.router.router', 'ui.router.util']);
  * 
  * <pre>
  * <!doctype html>
- * <html ng-app="myApp">
+ * <html ng-app="Yinder">
  * <head>
  *   <script src="js/angular.js"></script>
  *   <!-- Include the ui-router script -->
  *   <script src="js/angular-ui-router.min.js"></script>
  *   <script>
  *     // ...and add 'ui.router' as a dependency
- *     var myApp = angular.module('myApp', ['ui.router']);
+ *     var Yinder = angular.module('Yinder', ['ui.router']);
  *   </script>
  * </head>
  * <body>
@@ -42929,9 +42929,9 @@ function($rootScope, $state, $location, $document, $ionicPlatform, $ionicHistory
  *
  * @usage
  * ```js
- * var myApp = angular.module('reallyCoolApp', ['ionic']);
+ * var Yinder = angular.module('reallyCoolApp', ['ionic']);
  *
- * myApp.config(function($ionicConfigProvider) {
+ * Yinder.config(function($ionicConfigProvider) {
  *   $ionicConfigProvider.views.maxCache(5);
  *
  *   // note that you can also chain configs
@@ -43507,7 +43507,7 @@ var LOADING_SET_DEPRECATED = '$ionicLoading instance.setContent() has been depre
  *
  * @usage
  * ```js
- * var app = angular.module('myApp', ['ionic'])
+ * var app = angular.module('Yinder', ['ionic'])
  * app.constant('$ionicLoadingConfig', {
  *   template: 'Default Loading Template...'
  * });
@@ -45523,7 +45523,7 @@ IonicModule
  * in the `$state` definition
  *
  * ```js
- *   angular.module('myApp', ['ionic'])
+ *   angular.module('Yinder', ['ionic'])
  *   .config(function($stateProvider, $ionicConfigProvider) {
  *
  *     // disable preemptive template caching globally
@@ -50682,7 +50682,7 @@ IonicModule
  * Next, we need to setup our states that will be rendered.
  *
  * ```js
- * var app = angular.module('myApp', ['ionic']);
+ * var app = angular.module('Yinder', ['ionic']);
  * app.config(function($stateProvider) {
  *   $stateProvider
  *   .state('index', {

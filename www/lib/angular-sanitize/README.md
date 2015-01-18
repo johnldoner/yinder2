@@ -23,7 +23,7 @@ Add a `<script>` to your `index.html`:
 Then add `ngSanitize` as a dependency for your app:
 
 ```javascript
-angular.module('myApp', ['ngSanitize']);
+angular.module('Yinder', ['ngSanitize']);
 ```
 
 Note that this package is not in CommonJS format, so doing `require('angular-sanitize')` will
@@ -44,7 +44,7 @@ Add a `<script>` to your `index.html`:
 Then add `ngSanitize` as a dependency for your app:
 
 ```javascript
-angular.module('myApp', ['ngSanitize']);
+angular.module('Yinder', ['ngSanitize']);
 ```
 
 ## Documentation
