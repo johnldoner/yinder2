@@ -228,18 +228,16 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards', 'fireb
 })
 */
 
-.controller('UserCtrl', ["$scope", "$sce", function($scope, $sce) {
-    console.log("1");
+.controller('UserCtrl', ["$scope", function($scope) {
     if ($scope.user) {
-        console.log("2");
-        $('.carousel-iframe').html('<iframe style="border:none" width="100%" height="100%" src="../explore/?userid=' + $scope.user.facebook.id + '&amp;name=' + $scope.user.facebook.displayName + '" />');
+        $('.carousel-iframe').html('<iframe style="border:none" width="100%" height="100%" src="explore/?userid=' + $scope.user.facebook.id + '&amp;name=' + $scope.user.facebook.displayName + '" />');
 
         //$scope.carousel = $sce.trustAsHtml();
     }
 }])
 
-.controller('CardsCtrl', ["$scope", "$firebase", "$ionicSwipeCardDelegate", "Categories", "$sce",
-    function($scope, $firebase, $ionicSwipeCardDelegate, Categories, $sce) {
+.controller('CardsCtrl', ["$scope", "$firebase", "$ionicSwipeCardDelegate", "Categories",
+    function($scope, $firebase, $ionicSwipeCardDelegate, Categories) {
   var Ref = new Firebase("https://yinder.firebaseio.com/Categories");
 
   $scope.categories = Categories;
