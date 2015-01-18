@@ -1,52 +1,37 @@
 
 <ion-view view-title="Select"> 
   <ion-content class="padding">
-  <br><br>
+  <br></br><br></br>
   <h3>Selete your preference:</h3>
 <div class="list">
+<!--
+      <ion-checkbox ng-model="pushNotification.checked" ng-change="pushNotificationChange()">
+        Push Notifications
+      </ion-checkbox>
+-->
+      <ion-checkbox ng-repeat="item in devList" ng-model="item.checked" ng-checked="item.checked">
+        {{ item.text }}
+      </ion-checkbox>
+ 
 
-  <label class="item item-radio">
-    <input type="radio" name="group">
-    <div class="item-content">
-      Running
-    </div>
-    <i class="radio-icon ion-checkmark"></i>
-  </label>
-    <label class="item item-radio">
-    <input type="radio" name="group">
-    <div class="item-content">
-      Shopping
-    </div>
-    <i class="radio-icon ion-checkmark"></i>
-  </label>
-    <label class="item item-radio">
-    <input type="radio" name="group">
-    <div class="item-content">
-      Hiking
-    </div>
-    <i class="radio-icon ion-checkmark"></i>
-  </label>
-    <label class="item item-radio">
-    <input type="radio" name="group">
-    <div class="item-content">
-      Singing
-    </div>
-    <i class="radio-icon ion-checkmark"></i>
-  </label>
-   <label class="item item-radio">
-    <input type="radio" name="group">
-    <div class="item-content">
-      Museums
-    </div>
-    <i class="radio-icon ion-checkmark"></i>
-  </label>
-      <label class="item item-radio">
-    <input type="radio" name="group">
-    <div class="item-content">
-      Concerts
-    </div>
-    <i class="radio-icon ion-checkmark"></i>
-  </label>
+
+<!--
+   <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" >
+     </label>
+     Running
+  </li>
+
+ <li class="item item-radio">
+     <label class="radio">
+       <input type="radio" >
+     </label>
+     Singing
+  </li>
+ 
+  -->
+
 
 
 </div>

@@ -1,8 +1,15 @@
 @font-face {
     font-family: 'Kaushan Script', cursive;
-
+font-family: 'Slabo', serif;
 }
+
 #logo{
 	font-family: Kaushan Script;
-	font-size:40px;
+	font-size:2em;
+	text-align: center;
+}
+body{
+	font-family: Slabo;
+	font-size:1em;
+
 }

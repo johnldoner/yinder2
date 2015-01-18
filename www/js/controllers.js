@@ -1,5 +1,7 @@
 angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','firebase'])
 
+.controller('testCtrl', function($scope) {})
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -45,12 +47,62 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
     navigator.device.capture.captureVideo(captureSuccess, captureFailure, options);
   };
 })
-/*
 
+/*
 .controller('EventCtrl', function($scope, $stateParams, Eventcategorys) {
   $scope.eventcategory = Eventcategorys.get($stateParams.categorys);
 })
+
 */
+.controller('EventCtrl', function($scope) {
+
+ $scope.devList = [
+    {
+      text: "Running",
+      checked: true
+    },
+    {
+      text: "Museums",
+      checked: false
+    },
+        {
+      text: "Hiking",
+      checked: false
+    },
+        {
+      text: "Concerts",
+      checked: false
+    },
+        {
+      text: "Hiking",
+      checked: false
+    },
+            {
+      text: "Singing",
+      checked: false
+    },
+
+    {
+      text: "Shopping",
+      checked: false
+    }
+  ];
+
+})
+
+
+/*
+  $scope.pushNotificationChange = function () {
+    console.log('Push Notification Change', $scope.pushNotification.checked);
+  };
+
+  $scope.pushNotification = {
+    checked: true
+  };
+  $scope.emailNotification = 'Subscribed';
+*/
+
+
 
 .controller('CardsCtrl',["$scope","$firebase","$ionicSwipeCardDelegate", function($scope,$firebase, $ionicSwipeCardDelegate) {
   var Ref = new Firebase("https://yinder.firebaseio.com/Categories");
