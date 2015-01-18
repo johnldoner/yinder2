@@ -15,6 +15,12 @@ app.factory("Categories", ["$firebase", "Ref", function($firebase, Ref) {
   return $firebase(childRef).$asArray();
 }]);
 
+
+app.factory("People", ["$firebase", "Ref", function($firebase, Ref) {
+  var childRef = Ref.child('People');
+  return $firebase(childRef).$asArray();
+}]);
+
 //purpose is to pull only the ideas under that users liked section
 app.factory("LikedIdeas", ["$firebase","Ref", function($firebase,Ref) {
      return function(userId) {
@@ -23,8 +29,8 @@ app.factory("LikedIdeas", ["$firebase","Ref", function($firebase,Ref) {
      };
 }]);
 
-app.controller("ctrl", ["$scope","$firebase","Auth","Categories","LikedIdeas", function($scope,$firebase,Auth,Categories,LikedIdeas) {
-
+app.controller("ctrl", ["$scope","$firebase","Auth","Categories","LikedIdeas","People", function($scope,$firebase,Auth,Categories,LikedIdeas,People) {
+  $scope.people = People;
   $scope.categories = Categories;
   $scope.auth = Auth;
   $scope.FBURL = "https://yinder.firebase.com/";
