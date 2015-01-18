@@ -23,7 +23,7 @@ Add a `<script>` to your `index.html`:
 Then add `ngAnimate` as a dependency for your app:
 
 ```javascript
-angular.module('myApp', ['ngAnimate']);
+angular.module('Yinder', ['ngAnimate']);
 ```
 
 Note that this package is not in CommonJS format, so doing `require('angular-animate')` will
@@ -44,7 +44,7 @@ Then add a `<script>` to your `index.html`:
 Then add `ngAnimate` as a dependency for your app:
 
 ```javascript
-angular.module('myApp', ['ngAnimate']);
+angular.module('Yinder', ['ngAnimate']);
 ```
 
 ## Documentation

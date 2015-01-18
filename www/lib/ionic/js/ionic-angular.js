@@ -2025,9 +2025,9 @@ function($rootScope, $state, $location, $document, $ionicPlatform, $ionicHistory
  *
  * @usage
  * ```js
- * var myApp = angular.module('reallyCoolApp', ['ionic']);
+ * var Yinder = angular.module('reallyCoolApp', ['ionic']);
  *
- * myApp.config(function($ionicConfigProvider) {
+ * Yinder.config(function($ionicConfigProvider) {
  *   $ionicConfigProvider.views.maxCache(5);
  *
  *   // note that you can also chain configs
@@ -2603,7 +2603,7 @@ var LOADING_SET_DEPRECATED = '$ionicLoading instance.setContent() has been depre
  *
  * @usage
  * ```js
- * var app = angular.module('myApp', ['ionic'])
+ * var app = angular.module('Yinder', ['ionic'])
  * app.constant('$ionicLoadingConfig', {
  *   template: 'Default Loading Template...'
  * });
@@ -4619,7 +4619,7 @@ IonicModule
  * in the `$state` definition
  *
  * ```js
- *   angular.module('myApp', ['ionic'])
+ *   angular.module('Yinder', ['ionic'])
  *   .config(function($stateProvider, $ionicConfigProvider) {
  *
  *     // disable preemptive template caching globally
@@ -9778,7 +9778,7 @@ IonicModule
  * Next, we need to setup our states that will be rendered.
  *
  * ```js
- * var app = angular.module('myApp', ['ionic']);
+ * var app = angular.module('Yinder', ['ionic']);
  * app.config(function($stateProvider) {
  *   $stateProvider
  *   .state('index', {
