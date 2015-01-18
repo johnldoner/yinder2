@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards'])
+angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','firebase'])
 
 .controller('DashCtrl', function($scope) {})
 
@@ -56,25 +56,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards'])
   };
 })
 
-.controller('CardsCtrl', function($scope, $ionicSwipeCardDelegate) {
-  var cardTypes = [{
-    title: 'Swipe down to clear the card',
-    image: 'img/pic.png'
-  }, {
-    title: 'Where is this?',
-    image: 'img/pic.png'
-  }, {
-    title: 'What kind of grass is this?',
-    image: 'img/pic2.png'
-  }, {
-    title: 'What beach is this?',
-    image: 'img/pic3.png'
-  }, {
-    title: 'What kind of clouds are these?',
-    image: 'img/pic4.png'
-  }];
+.controller('CardsCtrl',["$scope","$firebase","$ionicSwipeCardDelegate", function($scope,$firebase, $ionicSwipeCardDelegate) {
+  var Ref = new Firebase("https://yinder.firebaseio.com/Categories");
+  $scope.cardTypes = $firebase(Ref).$asArray();
 
-  $scope.cards = Array.prototype.slice.call(cardTypes, 0, 0);
+
+  $scope.cards = Array.prototype.slice.call($scope.cardTypes, 0, 0);
 
   $scope.cardSwiped = function(index) {
     $scope.addCard();
@@ -85,11 +72,11 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards'])
   };
 
   $scope.addCard = function() {
-    var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+    var newCard = $scope.cardTypes[Math.floor(Math.random() * $scope.cardTypes.length)];
     newCard.id = Math.random();
     $scope.cards.push(angular.extend({}, newCard));
   }
-})
+}])
 
 .controller('CardCtrl', function($scope, $ionicSwipeCardDelegate) {
   $scope.goAway = function() {

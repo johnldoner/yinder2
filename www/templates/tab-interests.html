@@ -4,10 +4,14 @@
       <swipe-card on-card-swipe="cardSwiped()" id="start-card">
         Swipe down for a new card
       </swipe-card>
-      <swipe-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)">
+      <swipe-card ng-repeat="(id,card) in cards" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)">
         <div ng-controller="CardCtrl">
           <div class="title">
-            {{card.title}}
+            {{card.Category}}
+          </div>
+          <div class="button-bar">
+            <button class="button button-clear button-positive" ng-click="goAway()">Like</button>
+            <button class="button button-clear button-positive" ng-click="goAway()">Dislike</button>
           </div>
         </div>
       </swipe-card>
