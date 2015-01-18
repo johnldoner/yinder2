@@ -49,7 +49,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards', 'fireb
   $scope.chats = Chats.all();
   //add
       $scope.doRefresh = function() {
-        
+
         console.log('Refreshing!');
         $timeout( function() {
 
@@ -79,9 +79,9 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards', 'fireb
 */
         //Stop the ion-refresher from spinning
         $scope.$broadcast('scroll.refreshComplete');
-        
+
         }, 1000);
-        
+
     };
   $scope.remove = function(chat) {
     Chats.remove(chat);
@@ -89,7 +89,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards', 'fireb
 };
 
 })
-//add 
+//add
 /*
 .controller('ChatingCtrl', function ( $scope, $ionicFrostedDelegate, $ionicScrollDelegate, $rootScope) {
 
@@ -142,7 +142,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards', 'fireb
   };
 
 
-     
+
 })
 
 */
@@ -228,12 +228,21 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards', 'fireb
 })
 */
 
-.controller('CardsCtrl', ["$scope", "$firebase", "$ionicSwipeCardDelegate","Categories", function($scope, $firebase, $ionicSwipeCardDelegate,Categories) {
+.controller('UserCtrl', ["$scope", "$sce", function($scope, $sce) {
+    console.log("1");
+    if ($scope.user) {
+        console.log("2");
+        $('.carousel-iframe').html('<iframe style="border:none" width="100%" height="100%" src="../explore/?userid=' + $scope.user.facebook.id + '&amp;name=' + $scope.user.facebook.displayName + '" />');
+
+        //$scope.carousel = $sce.trustAsHtml();
+    }
+}])
+
+.controller('CardsCtrl', ["$scope", "$firebase", "$ionicSwipeCardDelegate", "Categories", "$sce",
+    function($scope, $firebase, $ionicSwipeCardDelegate, Categories, $sce) {
   var Ref = new Firebase("https://yinder.firebaseio.com/Categories");
-  
+
   $scope.categories = Categories;
-
-
 
 /*
   $scope.pushNotificationChange = function () {
@@ -278,7 +287,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards', 'fireb
   $scope.goAway = function(id,LikeorDislike) {
     var card = $ionicSwipeCardDelegate.getSwipeableCard($scope);
     card.swipe();
-  
+
     alert(Categories.$keyAt(parseInt(id)-1))
 
     var FBURL = "https://yinder.firebaseio.com/Categories/"+Categories.$keyAt(parseInt(id)-1);
