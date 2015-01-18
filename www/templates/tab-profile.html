@@ -1,6 +1,15 @@
-<ion-view view-title="Account">
+<ion-view view-title="Profile">
   <ion-content>
     <ion-list>
+      <ion-item>
+        <div class="profile-name">
+          {{name}}
+        </div>
+        <img src="{{profile_pic}}" alt="" class="profile-pic">
+      </ion-item>
+      <ion-item href="#/video">
+        Add/Modify Video
+      </ion-item>
       <ion-item class="item-toggle">
         Enable Friends
         <label class="toggle">

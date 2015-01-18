@@ -6,7 +6,7 @@ angular.module('starter.controllers', [])
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
-  }
+};
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
@@ -21,16 +21,19 @@ angular.module('starter.controllers', [])
   $scope.friend = Friends.get($stateParams.friendId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('ProfileCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
   };
+
+  $scope.name = 'Kevin Ji';
+  $scope.profile_pic = 'https://pbs.twimg.com/profile_images/451007105391022080/iu1f7brY_400x400.png';
 })
 
 .controller("LoginCtrl", ["$scope","$firebase","Auth", function($scope,$firebase,Auth) {
   $scope.auth = Auth;
   $scope.FBURL = "https://crowdfluttr.firebase.com/";
-  
+
       function AuthHandler(error, authData) {
       if (error) {
         console.log("Login Failed!", error);
@@ -44,7 +47,7 @@ angular.module('starter.controllers', [])
       }
     }
 
-  $scope.FacebookLogin = function () {  
+  $scope.FacebookLogin = function () {
     $scope.auth.$authWithOAuthRedirect('facebook', AuthHandler())(); //Need to have empty parenthesis for login to be called
     console.log(user.facebook.displayName);
     var ref = new Firebase(FBURL);
