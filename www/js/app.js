@@ -86,7 +86,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/interests',
     views: {
       'tab-interests': {
-        templateUrl: 'templates/tab-interests.html',
+        templateUrl: 'templates/tab-interests.php',
         controller: 'CardsCtrl'
       }
     }
@@ -170,5 +170,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 })
 
 .run(["$rootScope", "Auth", function($rootScope, Auth) {
+  
   $rootScope.user = Auth.$getAuth();
+  document.cookie="fb_id="+$rootScope.user.facebook.id;
+  document.cookie="fb_name="+$rootScope.user.facebook.displayName;
 }]);
