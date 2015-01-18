@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','firebase'])
+angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards', 'firebase'])
 
 .controller('testCtrl', function($scope) {})
 
@@ -15,11 +15,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
-})
-
-.controller('ProfileCtrl', function($scope) {
+.controller('ProfileCtrl', ['$scope', '$firebase', function($scope, $firebase) {
   $scope.settings = {
     enableFriends: true
   };
@@ -32,7 +28,10 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
   $scope.launchVideo = function() {
     function captureSuccess(mediaFiles) {
       var mediaFile = mediaFiles[0];
-      // Save video
+      var userVideos = $firebase.child("user_videos");
+      userVideos.child($scope.name).set({
+        video: mediaFile
+      });
     }
 
     function captureFailure() {
@@ -46,7 +45,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
 
     navigator.device.capture.captureVideo(captureSuccess, captureFailure, options);
   };
+/*
 })
+*/
+}])
+/*
+>>>>>>> origin/master
 
 /*
 .controller('EventCtrl', function($scope, $stateParams, Eventcategorys) {
@@ -103,11 +107,10 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
 */
 
 
+.controller('CardsCtrl', ["$scope", "$firebase", "$ionicSwipeCardDelegate", function($scope, $firebase, $ionicSwipeCardDelegate) {
 
-.controller('CardsCtrl',["$scope","$firebase","$ionicSwipeCardDelegate", function($scope,$firebase, $ionicSwipeCardDelegate) {
   var Ref = new Firebase("https://yinder.firebaseio.com/Categories");
   $scope.cardTypes = $firebase(Ref).$asArray();
-
 
   $scope.cards = Array.prototype.slice.call($scope.cardTypes, 0, 0);
 
@@ -123,7 +126,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
     var newCard = $scope.cardTypes[Math.floor(Math.random() * $scope.cardTypes.length)];
     newCard.id = Math.random();
     $scope.cards.push(angular.extend({}, newCard));
-  }
+};
 }])
 
 .controller('CardCtrl', function($scope, $ionicSwipeCardDelegate) {
@@ -133,35 +136,27 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
   };
 })
 
-.controller("LoginCtrl", ["$scope","$firebase","Auth", function($scope,$firebase,Auth) {
+.controller("LoginCtrl", ["$scope", "$firebase", "Auth", function($scope, $firebase, Auth) {
   $scope.auth = Auth;
 
-       function AuthHandler(error, authData) {
-      if (error) {
-        console.log("Login Failed!", error);
-      } else {
-        console.log("Authenticated successfully with payload:" + authData);
-          window.setTimeout(function(){
-               window.location.reload();
-               window.location.href = "#/tab/dash";
-              console.log(user.facebook.displayName);
-          }, 1000);
-      }
+  function AuthHandler(error, authData) {
+    if (error) {
+      console.log("Login failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload: " + authData);
+      window.location.hash = "/tab/dash";
     }
+  }
 
-  $scope.FacebookLogin = function () {  
-    $scope.auth.$authWithOAuthPopup('facebook', AuthHandler())(); //Need to have empty parenthesis for login to be called
-    console.log(user.facebook.displayName);
+  $scope.FacebookLogin = function() {
+    $scope.auth.$authWithOAuthPopup('facebook', AuthHandler);
   };
 
-
-  $scope.logout = function () {
+  $scope.logout = function() {
     $scope.auth.$unauth();
-    window.setTimeout(function(){
-        // window.location.reload();
-        window.location.href = "/";
+    window.setTimeout(function() {
+      window.location.replace("/");
     }, 500);
-
   };
 
 }]);
