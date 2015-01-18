@@ -3,9 +3,9 @@
     <ion-list>
       <ion-item>
         <div class="profile-name">
-          {{user.facebook.displayName}}
+          {{name}}
         </div>
-        <img src="https://graph.facebook.com/{{user.facebook.id}}/picture?type=normal" alt="" class="profile-pic">
+        <img src="{{profilePic}}" alt="" class="profile-pic">
       </ion-item>
       <ion-item href="#" ng-click="launchVideo()">
         Add New Video

@@ -26,6 +26,11 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards'])
     enableFriends: true
   };
 
+  $scope.name = $scope.user && $scope.user.facebook.displayName || 'Not logged in';
+  $scope.profilePic = $scope.user ? 'https://graph.facebook.com/' +
+    $scope.user.facebook.id + '/picture?type=normal' :
+    '';
+
   $scope.launchVideo = function() {
     function captureSuccess(mediaFiles) {
       var mediaFile = mediaFiles[0];
