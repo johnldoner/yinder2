@@ -2,7 +2,23 @@
   <ion-content class="padding">
     <br></br><br></br>
     <div class="list list-inset">
-      <button class="button button-block button-positive" ng-click="FacebookLogin()"><i class="icon ion-social-facebook"></i> Login with Facebook</button>
+      <button class="button button-block button-positive" ng-click="FacebookLogin()" ><i class="icon ion-social-facebook"></i> Login with Facebook</button>
     </div>
+  <button class="button button-assertive" ng-click="showPasswordPrompt()">Password Prompt</button>
+   
   </ion-content>
+
 </ion-view>
+  <script id="popup-template.html" type="text/ng-template">
+    < input ng - model = "data.wifi"
+    type = "text"
+    placeholder = "Password" >
+  </script>
+
+<!--
+    <button class="button button-dark" ng-click="showPopup()">Multiple</button>
+  <button class="button button-primary" ng-click="showConfirm()">Confirm</button>
+  <button class="button button-balanced" ng-click="showPrompt()">Prompt</button>
+  <button class="button button-assertive" ng-click="showPasswordPrompt()">Password Prompt</button>
+  <button class="button button-positive" ng-click="showAlert()">Alert</button>
+-->

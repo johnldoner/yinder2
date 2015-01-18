@@ -27,4 +27,26 @@
     </ion-side-menus>
 
 
-    
+
+      <div ng-controller="MainCtrl">
+    <ion-nav-view></ion-nav-view>
+  </div>
+
+  <script>
+
+.controller('MainCtrl', function($scope, $ionicSideMenuDelegate) {
+  $scope.attendees = [
+    { firstname: 'Nicolas', lastname: 'Cage' },
+    { firstname: 'Jean-Claude', lastname: 'Van Damme' },
+    { firstname: 'Keanu', lastname: 'Reeves' },
+    { firstname: 'Steven', lastname: 'Seagal' }
+  ];
+
+  $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+})
+
+  </script>
+
+
