@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','firebase'])
+angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards', 'firebase'])
 
 .controller('DashCtrl', function($scope) {})
 
@@ -13,7 +13,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('ProfileCtrl', function($scope) {
+.controller('ProfileCtrl', ['$scope', '$firebase', function($scope, $firebase) {
   $scope.settings = {
     enableFriends: true
   };
@@ -26,7 +26,10 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
   $scope.launchVideo = function() {
     function captureSuccess(mediaFiles) {
       var mediaFile = mediaFiles[0];
-      // Save video
+      var userVideos = $firebase.child("user_videos");
+      userVideos.child($scope.name).set({
+        video: mediaFile
+      });
     }
 
     function captureFailure() {
@@ -40,7 +43,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
 
     navigator.device.capture.captureVideo(captureSuccess, captureFailure, options);
   };
-})
+}])
 /*
 
 .controller('EventCtrl', function($scope, $stateParams, Eventcategorys) {

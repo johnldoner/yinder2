@@ -102,7 +102,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
- .state('tab.select', {
+  .state('tab.select', {
     url: '/select',
     views: {
       'tab-select': {
