@@ -49,12 +49,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards'])
     navigator.device.capture.captureVideo(captureSuccess, captureFailure, options);
   };
 })
+/*
 
-.controller('EventCtrl', function($scope) {
-  $scope.settings = {
-    
-  };
+.controller('EventCtrl', function($scope, $stateParams, Eventcategorys) {
+  $scope.eventcategory = Eventcategorys.get($stateParams.categorys);
 })
+*/
 
 .controller('CardsCtrl', function($scope, $ionicSwipeCardDelegate) {
   var cardTypes = [{
