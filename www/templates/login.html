@@ -1,32 +1,22 @@
-
-<ion-view view-title="Login"> 
+<ion-view view-title="Login">
   <ion-content class="padding">
-  <br><br>
-  <!--
-        <div class="bar bar-footer bar-positive" ng-click="FacebookLogin()">
-          <div class="title">Login with Facebook</div>
-        </div>
-        -->
+    <br><br>
 
-            <div class="list list-inset">
-  <label class="item item-input">
-    <input type="email" placeholder="Email">
-  </label>
-  <label class="item item-input">
-    <input type="password" placeholder="Password">
-  </label>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="email" placeholder="Email">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password">
+      </label>
 
-  <button  class="button button-block button-assertive" ng-click=""><i class="icon ion-social-hackernews-outline"></i>Register</button>
+      <button class="button button-block button-assertive" ng-click=""><i class="icon ion-social-hackernews-outline"></i> Register</button>
+      <button class="button button-block button-positive" ng-click="FacebookLogin()"><i class="icon ion-social-facebook"></i> Login with Facebook</button>
 
-  <button  class="button button-block button-positive" ng-click="FacebookLogin()"><i class="icon ion-social-facebook"></i>Login with Facebook</button>
-
-
-    <label class="item item-input">
-    <input type="text" class="nativedatepicker" placeholder="datepicker">
-  </label>
-
-</div>
-
+      <label class="item item-input">
+        <input type="text" class="nativedatepicker" placeholder="datepicker">
+      </label>
+    </div>
   </ion-content>
 </ion-view>
 <script>
