@@ -9,7 +9,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 //add
 //angular.module('starter1', ['ionic', 'starter1.controllers', 'starter1.services', 'firebase'])
 
-.constant("FBURL", "https://crowdfluttr.firebaseio.com/")
+.constant("FBURL", "https://yinder.firebaseio.com/")
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -133,7 +133,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/login');
 
 })
 

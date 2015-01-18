@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards'])
+angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','firebase'])
 
 .controller('DashCtrl', function($scope) {})
 
@@ -26,29 +26,42 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards'])
     enableFriends: true
   };
 
-  $scope.name = 'Kevin Ji';
-  $scope.profile_pic = 'https://pbs.twimg.com/profile_images/451007105391022080/iu1f7brY_400x400.png';
+  $scope.name = $scope.user && $scope.user.facebook.displayName || 'Not logged in';
+  $scope.profilePic = $scope.user ? 'https://graph.facebook.com/' +
+    $scope.user.facebook.id + '/picture?type=normal' :
+    '';
+
+  $scope.launchVideo = function() {
+    function captureSuccess(mediaFiles) {
+      var mediaFile = mediaFiles[0];
+      // Save video
+    }
+
+    function captureFailure() {
+      // Warn user about failed video capture
+    }
+
+    var options = {
+      limit: 1,
+      duration: 5
+    };
+
+    navigator.device.capture.captureVideo(captureSuccess, captureFailure, options);
+  };
 })
 
-.controller('CardsCtrl', function($scope, $ionicSwipeCardDelegate) {
-  var cardTypes = [{
-    title: 'Swipe down to clear the card',
-    image: 'img/pic.png'
-  }, {
-    title: 'Where is this?',
-    image: 'img/pic.png'
-  }, {
-    title: 'What kind of grass is this?',
-    image: 'img/pic2.png'
-  }, {
-    title: 'What beach is this?',
-    image: 'img/pic3.png'
-  }, {
-    title: 'What kind of clouds are these?',
-    image: 'img/pic4.png'
-  }];
+.controller('EventCtrl', function($scope) {
+  $scope.settings = {
+    
+  };
+})
 
-  $scope.cards = Array.prototype.slice.call(cardTypes, 0, 0);
+.controller('CardsCtrl',["$scope","$firebase","$ionicSwipeCardDelegate", function($scope,$firebase, $ionicSwipeCardDelegate) {
+  var Ref = new Firebase("https://yinder.firebaseio.com/Categories");
+  $scope.cardTypes = $firebase(Ref).$asArray();
+
+
+  $scope.cards = Array.prototype.slice.call($scope.cardTypes, 0, 0);
 
   $scope.cardSwiped = function(index) {
     $scope.addCard();
@@ -59,11 +72,11 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards'])
   };
 
   $scope.addCard = function() {
-    var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+    var newCard = $scope.cardTypes[Math.floor(Math.random() * $scope.cardTypes.length)];
     newCard.id = Math.random();
     $scope.cards.push(angular.extend({}, newCard));
   }
-})
+}])
 
 .controller('CardCtrl', function($scope, $ionicSwipeCardDelegate) {
   $scope.goAway = function() {

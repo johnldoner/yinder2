@@ -87,30 +87,25 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
 
 .controller("LoginCtrl", ["$scope","$firebase","Auth", function($scope,$firebase,Auth) {
   $scope.auth = Auth;
-  $scope.FBURL = "https://crowdfluttr.firebase.com/";
 
-      function AuthHandler(error, authData) {
+       function AuthHandler(error, authData) {
       if (error) {
         console.log("Login Failed!", error);
       } else {
         console.log("Authenticated successfully with payload:" + authData);
           window.setTimeout(function(){
-              // window.location.reload();
-              window.location.href = "home-B.html";
+               window.location.reload();
+               window.location.href = "#/tab/dash";
               console.log(user.facebook.displayName);
           }, 1000);
       }
     }
 
-  $scope.FacebookLogin = function () {
-    $scope.auth.$authWithOAuthRedirect('facebook', AuthHandler())(); //Need to have empty parenthesis for login to be called
+  $scope.FacebookLogin = function () {  
+    $scope.auth.$authWithOAuthPopup('facebook', AuthHandler())(); //Need to have empty parenthesis for login to be called
     console.log(user.facebook.displayName);
-    var ref = new Firebase(FBURL);
-    var userPath = ref.child("users").child($scope.user.facebook.id);
-    var loginCountPath = userPath.child("loginCount");
-    loginCountPath.transaction(increment(count));
-    window.location.href = "explore.html";
   };
+
 
   $scope.logout = function () {
     $scope.auth.$unauth();

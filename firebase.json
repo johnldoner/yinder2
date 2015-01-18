@@ -1,5 +1,5 @@
 {
-  "firebase": "yinder2",
+  "firebase": "yinder",
   "public": ".",
   "ignore": [
     "firebase.json",

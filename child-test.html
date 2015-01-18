@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+     <title>Idea Child Test</title>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+        <script>
+          var app = angular.module("app", ["firebase"]);
+          app.controller("ctrl", ["$scope", "$firebase",
+            function($scope, $firebase) {
+              var ref = new Firebase("https://yinder.firebaseio.com/Categories");
+              ref.on("value", function(snapshot) {
+                  var hello = snapshot.val();
+                  $scope.world = hello.Category;
+                  console.log(snapshot.val());
+                  console.log(world);
+                }, function (errorObject) {
+                  console.log("The read failed: " + errorObject.code);
+                });
+            }
+          ]);
+        </script>
+  </head>
+  <body ng-controller="ctrl">
+      {{world}}
+
+          </body>
+        </html>

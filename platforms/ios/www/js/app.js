@@ -6,6 +6,8 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase'])
+//add
+//angular.module('starter1', ['ionic', 'starter1.controllers', 'starter1.services', 'firebase'])
 
 .constant("FBURL", "https://crowdfluttr.firebaseio.com/")
 
@@ -117,7 +119,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         controller: 'LoginCtrl'
       }
     }
-  });
+  })
+
+ .state('tab.select', {
+    url: '/select',
+    views: {
+      'tab-select': {
+        templateUrl: 'templates/selectevent.html',
+        controller: 'EventCtrl'
+      }
+    }
+  })
+  ;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
