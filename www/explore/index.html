@@ -8,10 +8,9 @@
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://crowdfluttr.com/css/navbar.css" />
     <!-- Custom Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="https://crowdfluttr.com/css/maincarousel.css" />
+    <link rel="stylesheet" href="css/maincarousel.css" />
   </head>
   <body ng-controller="ctrl">
 
@@ -26,7 +25,7 @@
                 <a ng-click="LikeIdea('dislike',item.idea,ideas.indexOf(item))"  class="btn btn-lg btn-danger" href="#myCarousel" role="button" data-slide="next">Dislike<span class="glyphicon glyphicon-remove"></span></a>
                 <a class="btn btn-lg btn-default" href="idea.html?id={{ideas.$keyAt(ideas.indexOf(item))}}" role="button"><span class="glyphicon glyphicon-search"></span></a>
                 <a ng-click="LikeIdea('like',item.idea,ideas.indexOf(item))"  class="btn btn-lg btn-success" href="#myCarousel" role="button" data-slide="next">Like<span class="glyphicon glyphicon-heart"></span></a>
-      
+
           </div>
         </div>
       </div>
@@ -34,7 +33,7 @@
         <span u="arrowleft" id="arrowL" class="jssora21l " style="width: 55px; height: 55px; top: 123px; left: 8px;">
         </span>
       </a>
-      <a  class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
         <span u="arrowright" id="arrowR" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
         </span>
       </a>
