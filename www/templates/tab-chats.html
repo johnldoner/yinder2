@@ -1,5 +1,22 @@
 <ion-view view-title="Chats">
   <ion-content>
+      <ion-refresher on-refresh="doRefresh()" pulling-text="Pull to refresh..." refreshing-text="Refreshing!" refreshing-icon="ion-loading-c">
+    </ion-refresher>
+
+
+<div class="row">
+  <div class="col col-20 col-offset-80 button button-royal  ion-arrow-down-b" ng-click="scrollBottom()"></div>
+
+</div>
+<!--
+ <div class="button button-royal  ion-arrow-down-b" id="tobuttom" ng-click="scrollBottom()"></div>
+
+  -->    
+        <!--button-outline
+        ion-chevron-down
+    ion-arrow-up-b
+    ion-arrow-down-b-->
+   
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
         <img ng-src="{{chat.face}}"></img>
@@ -12,5 +29,9 @@
         </ion-option-button>
       </ion-item>
     </ion-list>
+
+
+
+
   </ion-content>
 </ion-view>
