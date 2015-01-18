@@ -25,9 +25,6 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards'])
   $scope.settings = {
     enableFriends: true
   };
-
-  $scope.name = 'Kevin Ji';
-  $scope.profile_pic = 'https://pbs.twimg.com/profile_images/451007105391022080/iu1f7brY_400x400.png';
 })
 
 .controller('CardsCtrl', function($scope, $ionicSwipeCardDelegate) {
