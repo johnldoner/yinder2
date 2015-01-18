@@ -13,10 +13,6 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
-})
-
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
   $scope.friend = Friends.get($stateParams.friendId);
 })
@@ -49,12 +45,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.cards','fireba
     navigator.device.capture.captureVideo(captureSuccess, captureFailure, options);
   };
 })
+/*
 
-.controller('EventCtrl', function($scope) {
-  $scope.settings = {
-    
-  };
+.controller('EventCtrl', function($scope, $stateParams, Eventcategorys) {
+  $scope.eventcategory = Eventcategorys.get($stateParams.categorys);
 })
+*/
 
 .controller('CardsCtrl',["$scope","$firebase","$ionicSwipeCardDelegate", function($scope,$firebase, $ionicSwipeCardDelegate) {
   var Ref = new Firebase("https://yinder.firebaseio.com/Categories");
