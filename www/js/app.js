@@ -112,14 +112,58 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
- .state('forgotpassword', {
-      url: '/forgot-password',
-      templateUrl: 'templates/test.html',
-       controller: 'testCtrl' 
+ .state('eventmenu', {
+      url: '/event',
+      templateUrl: 'templates/event-menu.html',
+       controller: 'menuCtrl' 
     })
+/*
+ .state('forgotpassword', {
+      url: "/forgot-password",
+      templateUrl: "forgot-password.html"
+    })
+*/
 
+     .state('eventmenu.home', {
+      url: "/home",
+      views: {
+        'menuContent' :{
+          templateUrl: "home.html"
+        }
+      }
+    })
+         .state('eventmenu.message', {
+      url: "/message",
+      views: {
+        'menuContent' :{
+          templateUrl: "message.html",
+          controller: "MessageCtrl"
+        }
+      }
+    })
+    .state('eventmenu.settings', {
+      url: "/settings",
+      views: {
+        'menuContent' :{
+          templateUrl: "settings.html",
+          controller: "SettingsCtrl"
+        }
+      }
+    })
+         /*
+    .state('eventmenu.settings', {
+      url: "/settings",
+      views: {
+        'menuContent' :{
+          templateUrl: "settings.html",
+          controller: "SettingsCtrl"
+        }
+      }
+    }*/
+//add content for testing
 
   ;
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/login');
